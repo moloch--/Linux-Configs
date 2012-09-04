@@ -1,0 +1,54 @@
+alignment bottom_middle
+background yes
+border_width 1
+cpu_avg_samples 0
+double_buffer yes
+default_color 222222
+default_outline_color 222222
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+#xftfont Sans Mono:size=8
+xftfont Terminus:size=8
+gap_x 5
+gap_y 0
+minimum_size 1365 6
+maximum_width 1365
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type override
+#own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer left
+show_graph_scale no
+show_graph_range no
+format_human_readable yes
+
+color1 999999
+color2 999999
+color3 999999
+
+mpd_host 127.0.0.1
+
+# ${mpd_status} - ${mpd_elapsed}/${mpd_length}] ${scroll 40 20 ${mpd_smart}} 
+# ${alignc}${color1} eth0 [${color3}${addr eth0}${color1}${color1}] \
+
+TEXT
+${alignc}${color1} Activity on /dev/sda: ${color1} ${diskiograph 10,50 000000 ff0000 -t}   | \
+${alignc}${color1}  wlan0 [${color3}${addr wlan0}${color1}${color1}] \
+${alignc}${color1} tun0 [${color3}${addr tun0}${color1}${color1}]  | \
+${alignc}${color1}  Battery [${color3}${acpiacadapter}${color1}]: ${color2}${battery_percent BAT0}% ${battery_bar 5,50 BAT0}  | \
+${alignc}${color1}  CPU: ${color1} ${cpu}% ${cpubar cpu0 5,50}  | \
+${alignc}${color1}  RAM: ${color1} ${memperc}% ${membar 5,50}  \
+
